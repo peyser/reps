@@ -40,14 +40,12 @@ export default function Main({ location }) {
         <Switch>
           <Route exact path="/" component={WelcomePage} />
           <Route path="/login" component={LoginPage} />
-          <Route path="/register" component={RegisterPage} />
           <Route path="/home" component={HomePage} />
           <Route path="/todo" component={TodoPage} />
           <Route path="/settings" component={SettingsPage} />
           <Route path="*" component={LostPage} />
         </Switch>
       </div>
-      <Footer />
     </div>
   );
 }

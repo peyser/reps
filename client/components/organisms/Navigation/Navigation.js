@@ -7,11 +7,11 @@ import R from 'ramda';
 import Navbar from 'react-bulma-companion/lib/Navbar';
 import Container from 'react-bulma-companion/lib/Container';
 import Image from 'react-bulma-companion/lib/Image';
-import Title from 'react-bulma-companion/lib/Title';
-import Button from 'react-bulma-companion/lib/Button';
+import { Typography, Button } from 'antd';
+
 
 import UserDropdown from '_molecules/UserDropdown';
-
+const { Title } = Typography;
 export default function Navigation({ pathname }) {
   const dispatch = useDispatch();
   const { user } = useSelector(R.pick(['user']));
@@ -48,31 +48,21 @@ export default function Navigation({ pathname }) {
             aria-label="main navigation"
             link
           >
-            <Title className="logo" size="3">
-              MERN Boilerplate
-            </Title>
+            <Title level={1} style ={{fontFamily: 'Formular Bold', fontWeight: 800}}>Отчетность АО"НБКИ"</Title>
           </Navbar.Item>
           <div className="navbar-brand-right">
             {!auth && (
               <Navbar.Item
                 className="is-hidden-desktop"
-                onClick={() => dispatch(push('/login'))}
-                link
+                
+                
               >
-                <Title size="6">
-                  Login
-                </Title>
+                <Button type="primary" onClick={() => dispatch(push('/login'))}>
+                Войти
+                </Button>
               </Navbar.Item>
             )}
-            {!auth && (
-              <Navbar.Item
-                className="is-hidden-desktop"
-                onClick={() => dispatch(push('/register'))}
-                link
-              >
-                <Button color="success">Sign Up</Button>
-              </Navbar.Item>
-            )}
+            
             {auth && (
               <Navbar.Item
                 className="is-hidden-desktop"
@@ -147,9 +137,6 @@ export default function Navigation({ pathname }) {
                 <Title size="6">
                   Login
                 </Title>
-              </Navbar.Item>
-              <Navbar.Item onClick={() => dispatch(push('/register'))} link>
-                <Button color="success">Sign Up</Button>
               </Navbar.Item>
             </Navbar.End>
           </Navbar.Menu>

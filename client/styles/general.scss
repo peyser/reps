@@ -1,12 +1,21 @@
+@font-face {
+  font-family: "Formular-Bold";
+  src: local("Formular-Bold"),
+    url(../assets/fonts/Formular-Bold.otf) format("otf");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                              'embedded-opentype', and 'svg' */
+}
+
 html {
   background-color: $whitesmoke;
-  font-size: 12px;
 }
 
 a {
   color: $info;
 }
-
+body {
+  font-family: "Formular-Bold";
+}
 .title {
   font-weight: $weight-normal;
 }
